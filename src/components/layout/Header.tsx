@@ -54,7 +54,11 @@ export default function Header() {
             <Button variant="primary" className="hidden 2xs:block">
               Рассчитать
             </Button>
-            <button className="lg:hidden">
+            <button
+              type="button"
+              className="lg:hidden"
+              aria-label="Открыть меню"
+            >
               <svg
                 width="24"
                 height="24"
