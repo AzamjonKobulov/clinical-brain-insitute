@@ -1,7 +1,12 @@
 import Container from "../shared/Container";
 import Link from "next/link";
 import Image from "next/image";
-import { FOOTER_LINKS } from "@/config/navigation";
+
+const FOOTER_LINKS = [
+  { label: "Политика конфиденциальности", href: "/privacy" },
+  { label: "Согласие на обработку данных", href: "/consent" },
+  { label: "Калькулятор реабилитации", href: "#calculator" },
+] as const;
 
 export default function Footer() {
   return (

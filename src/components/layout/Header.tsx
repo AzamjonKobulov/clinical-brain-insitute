@@ -6,7 +6,23 @@ import Image from "next/image";
 
 import Container from "../shared/Container";
 import Button from "../ui/Button";
-import { NAV_LINKS, MOBILE_NAV_LINKS } from "@/config/navigation";
+
+const NAV_LINKS = [
+  { label: "Калькулятор", href: "#calculator" },
+  { label: "Как работает", href: "#how-it-works" },
+  { label: "Интеграция", href: "#integrate" },
+  { label: "Вопросы и ответы", href: "#faq" },
+] as const;
+
+const MOBILE_NAV_LINKS = [
+  { label: "Реабилитация", href: "/" },
+  { label: "Пациентам", href: "/" },
+  { label: "Специалисты", href: "/" },
+  { label: "Услуги и цены", href: "/" },
+  { label: "Телеконсультации", href: "/" },
+  { label: "О нас", href: "/" },
+  { label: "Контакты", href: "/" },
+] as const;
 
 const HamburgerIcon = () => (
   <svg
