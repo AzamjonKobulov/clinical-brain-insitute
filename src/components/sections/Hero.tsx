@@ -81,7 +81,7 @@ export default function Hero() {
         width={1536}
         height={1024}
         unoptimized
-        className="hidden lg:block absolute top-0 -right-5"
+        className="hidden lg:block absolute top-10 xl:top-0 -right-5"
       />
     </section>
   );
