@@ -74,13 +74,14 @@ export default function Hero() {
         </div>
       </Container>
 
-      {/* Desktop Image */}
+      {/* Desktop Image - unoptimized so Vercel matches localhost (same file, no optimization) */}
       <Image
         src="/assets/images/hero.png"
         alt="Hero background"
         width={1536}
         height={1024}
-        className="hidden lg:block absolute -top-1/5 -right-5"
+        unoptimized
+        className="hidden lg:block absolute top-0 -right-5"
       />
     </section>
   );
