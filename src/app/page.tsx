@@ -4,6 +4,7 @@ import SuitableFor from "@/components/sections/SuitableFor";
 import Integrate from "@/components/sections/Integrate";
 import Formats from "@/components/sections/Formats";
 import WhatItGives from "@/components/sections/WhatItGives";
+import FAQ from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Integrate />
       <Formats />
       <WhatItGives />
+      <FAQ />
     </>
   );
 }
