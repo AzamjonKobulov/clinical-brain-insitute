@@ -105,7 +105,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-brand-green-25 transition-[padding-top] duration-200 ease-out ${hasScrolled ? "pt-0" : "pt-9.5"}`}
+      className={`sticky top-0 z-50 bg-brand-green-25 transition-[padding-top] duration-200 ease-out ${hasScrolled ? "pt-0" : "lg:pt-9.5"}`}
     >
       <nav className="py-3">
         <Container className="flex-between">
