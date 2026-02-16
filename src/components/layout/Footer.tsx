@@ -1,6 +1,7 @@
 import Container from "../shared/Container";
 import Link from "next/link";
 import Image from "next/image";
+import { FOOTER_LINKS } from "@/config/navigation";
 
 export default function Footer() {
   return (
@@ -20,30 +21,16 @@ export default function Footer() {
           </Link>
 
           <ul className="flex-base flex-col items-start sm:items-center md:flex-row gap-3.75 sm:gap-5 xl:gap-7.5 text-sm/5 md:text-xs/4 xl:text-base/6.25">
-            <li>
-              <Link
-                href="/"
-                className="font-medium hover:text-brand-green-400 smooth"
-              >
-                Политика конфиденциальности
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="font-medium hover:text-brand-green-400 smooth"
-              >
-                Согласие на обработку данных
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="font-medium hover:text-brand-green-400 smooth"
-              >
-                Калькулятор реабилитации
-              </Link>
-            </li>
+            {FOOTER_LINKS.map(({ label, href }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="font-medium hover:text-brand-green-400 smooth"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

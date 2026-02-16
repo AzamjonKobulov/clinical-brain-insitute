@@ -93,7 +93,7 @@ const items: { title: string; description: string; icon: React.ReactNode }[] = [
   },
 ];
 
-export default function SubHero() {
+export default function HowItWorks() {
   return (
     <section id="sub-hero">
       <Container className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3.75 sm:gap-6.5 lg:pt-5 lg:pb-9">
