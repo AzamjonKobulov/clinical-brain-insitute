@@ -27,7 +27,7 @@ export default function WhatItGives() {
           <h2>Что даёт этот расчёт</h2>
         </div>
 
-        <div className="flex items-center gap-2.5 lg:gap-6 md:flex-wrap overflow-x-auto scroll-none px-3.75 md:px-0!">
+        <div className="flex items-center gap-2.5 lg:gap-6 md:flex-wrap overflow-x-auto scroll-none px-3.75">
           {tags.map((tag) => (
             <button
               key={tag.label}
