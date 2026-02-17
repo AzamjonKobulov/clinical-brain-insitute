@@ -12,6 +12,7 @@
   --max-width-base: 1230px;
 
   --color-brand-dark: #2a2a2a;
+  --color-brand-dev: #ebf8f7;
   --color-brand-turquoise: #41988d;
   --color-brand-green-25: #fbfbfd;
   --color-brand-green-50: #f3f5f5;
@@ -127,7 +128,9 @@
 .mobile-menu-content {
   opacity: 0;
   transform: translateY(-12px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
 }
 
 .mobile-menu-content.show {
@@ -156,7 +159,9 @@
 .mobile-menu-content:not(.show) {
   opacity: 0;
   transform: translateY(-12px);
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-out;
+  transition:
+    opacity 0.2s ease-in-out,
+    transform 0.2s ease-out;
   pointer-events: none;
 }
 

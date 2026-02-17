@@ -52,7 +52,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex-between md:flex-base gap-5 bg-[#EBF8F7] lg:bg-none rounded-lg py-2.5 px-3.75 md:px-0 md:py-0">
+          <div className="flex-between md:flex-base gap-5 bg-brand-dev md:bg-white rounded-lg py-2.5 px-3.75 md:px-0 md:py-0">
             <span>Разработка сервиса</span>
             <Link href="/">
               <Image
