@@ -25,6 +25,8 @@
   --color-brand-vibrant-secondary: #e0e0e0;
   --color-brand-vibrant-primary: #cccccc;
   --color-brand-gray-100: #ededed;
+  --color-brand-gray-200: #d9d9d9;
+  --color-brand-gray-400: #aeaeb2;
   --color-brand-gray-500: #8e8e93;
   --color-brand-gray-600: #7a8a88;
 
@@ -47,6 +49,7 @@
   );
 
   --background-image-hero: url("/assets/images/hero.png");
+  --background-image-calc-steps: url("/assets/images/calc-steps.png");
 
   --radius-brand-xl: 15px;
 }
@@ -111,6 +114,18 @@
 @utility scroll-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.scroll-brand::-webkit-scrollbar {
+  @apply w-0.75 rounded-full;
+}
+
+.scroll-brand::-webkit-scrollbar-track {
+  @apply bg-brand-gray-200;
+}
+
+.scroll-brand::-webkit-scrollbar-thumb {
+  @apply bg-brand-green-400 rounded-full;
 }
 
 /* Mobile Menu Revealing Animation */

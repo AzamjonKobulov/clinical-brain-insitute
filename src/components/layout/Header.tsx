@@ -6,23 +6,7 @@ import Image from "next/image";
 
 import Container from "../shared/Container";
 import Button from "../ui/Button";
-
-const NAV_LINKS = [
-  { label: "Калькулятор", href: "#calculator" },
-  { label: "Как работает", href: "#how-it-works" },
-  { label: "Интеграция", href: "#integrate" },
-  { label: "Вопросы и ответы", href: "#faq" },
-] as const;
-
-const MOBILE_NAV_LINKS = [
-  { label: "Реабилитация", href: "/" },
-  { label: "Пациентам", href: "/" },
-  { label: "Специалисты", href: "/" },
-  { label: "Услуги и цены", href: "/" },
-  { label: "Телеконсультации", href: "/" },
-  { label: "О нас", href: "/" },
-  { label: "Контакты", href: "/" },
-] as const;
+import { NAV_LINKS, MOBILE_NAV_LINKS } from "@/data/navigation";
 
 const HamburgerIcon = () => (
   <svg
@@ -214,7 +198,7 @@ export default function Header() {
 
       {/* Bottom border – grows from center when scrolled */}
       <div
-        className={`absolute bottom-0 left-0 right-0 h-0.5 bg-brand-gray-100 origin-center transition-transform duration-[1200ms] ease-out ${hasScrolled ? "scale-x-100" : "scale-x-0"}`}
+        className={`absolute bottom-0 left-0 right-0 h-0.5 bg-brand-gray-100 origin-center transition-transform duration-1200 ease-out ${hasScrolled ? "scale-x-100" : "scale-x-0"}`}
         aria-hidden
       />
     </header>

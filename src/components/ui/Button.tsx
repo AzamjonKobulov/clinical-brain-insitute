@@ -9,7 +9,7 @@ const baseStyles = [
   "lg:py-3 lg:px-6.5 lg:text-base/5.5",
   "smooth cursor-pointer",
   "disabled:cursor-not-allowed",
-  "[&>:first-child]:shrink-0 [&>:first-child]:size-4 lg:[&>:first-child]:size-5",
+  "[&>.button-icon]:shrink-0 [&>.button-icon]:size-4 lg:[&>.button-icon]:size-5",
 ].join(" ");
 
 const variantStyles: Record<
@@ -34,7 +34,7 @@ const variantStyles: Record<
       "hover:text-brand-dark hover:bg-brand-green-500/6 hover:border-transparent",
     active: "active:bg-brand-green-500/12 active:border-transparent",
     disabled:
-      "disabled:text-brand-gray-600 disabled:border-brand-gray-600 disabled:bg-transparent disabled:hover:text-brand-gray-600 disabled:hover:border-brand-gray-600 disabled:hover:bg-transparent disabled:active:text-brand-gray-600 disabled:active:border-brand-gray-600 disabled:active:bg-transparent",
+      "disabled:text-brand-gray-200 disabled:border-brand-gray-200 disabled:bg-transparent disabled:hover:text-brand-gray-200 disabled:hover:border-brand-gray-200 disabled:hover:bg-transparent disabled:active:text-brand-gray-200 disabled:active:border-brand-gray-200 disabled:active:bg-transparent",
   },
   tab: {
     default:
@@ -76,7 +76,7 @@ export default function Button({
   const content = (
     <>
       {icon ? (
-        <span className="shrink-0 [&>svg]:size-4 lg:[&>svg]:size-5">
+        <span className="button-icon [&>svg]:size-4 lg:[&>svg]:size-5">
           {icon}
         </span>
       ) : null}
@@ -96,8 +96,8 @@ export default function Button({
     <button
       type="button"
       className={sharedClassName}
-      disabled={disabled}
       {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+      disabled={disabled}
     >
       {content}
     </button>
