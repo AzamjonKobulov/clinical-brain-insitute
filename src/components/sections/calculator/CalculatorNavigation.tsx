@@ -22,7 +22,7 @@ export default function CalculatorNavigation({
   onBack,
   onNext,
 }: Props) {
-  const { openCalculationMethod } = useModal();
+  const { openCalculationMethod, openTeleconsult } = useModal();
 
   return (
     <>
@@ -36,7 +36,11 @@ export default function CalculatorNavigation({
             >
               Предыдущий шаг
             </Button>
-            <Button variant="primary" className="w-full md:w-auto">
+            <Button
+              variant="primary"
+              className="w-full md:w-auto"
+              onClick={openTeleconsult}
+            >
               Записаться на телеконсультацию
             </Button>
             <Button

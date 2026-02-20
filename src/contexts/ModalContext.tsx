@@ -14,16 +14,19 @@ type ModalContextValue = {
   integrationConditionsOpen: boolean;
   calculationMethodOpen: boolean;
   widgetRequestOpen: boolean;
+  teleconsultOpen: boolean;
   openEmbedCode: () => void;
   openFindOutMore: () => void;
   openIntegrationConditions: () => void;
   openCalculationMethod: () => void;
   openWidgetRequest: () => void;
+  openTeleconsult: () => void;
   closeEmbedCode: () => void;
   closeFindOutMore: () => void;
   closeIntegrationConditions: () => void;
   closeCalculationMethod: () => void;
   closeWidgetRequest: () => void;
+  closeTeleconsult: () => void;
 };
 
 const ModalContext = createContext<ModalContextValue | null>(null);
@@ -35,6 +38,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
     useState(false);
   const [calculationMethodOpen, setCalculationMethodOpen] = useState(false);
   const [widgetRequestOpen, setWidgetRequestOpen] = useState(false);
+  const [teleconsultOpen, setTeleconsultOpen] = useState(true);
 
   const openEmbedCode = useCallback(() => setEmbedOpen(true), []);
   const openFindOutMore = useCallback(() => setHowItWorksOpen(true), []);
@@ -47,6 +51,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
     []
   );
   const openWidgetRequest = useCallback(() => setWidgetRequestOpen(true), []);
+  const openTeleconsult = useCallback(() => setTeleconsultOpen(true), []);
   const closeEmbedCode = useCallback(() => setEmbedOpen(false), []);
   const closeFindOutMore = useCallback(() => setHowItWorksOpen(false), []);
   const closeIntegrationConditions = useCallback(
@@ -61,6 +66,10 @@ export function ModalProvider({ children }: { children: ReactNode }) {
     () => setWidgetRequestOpen(false),
     []
   );
+  const closeTeleconsult = useCallback(
+    () => setTeleconsultOpen(false),
+    []
+  );
 
   return (
     <ModalContext.Provider
@@ -70,16 +79,19 @@ export function ModalProvider({ children }: { children: ReactNode }) {
         integrationConditionsOpen,
         calculationMethodOpen,
         widgetRequestOpen,
+        teleconsultOpen,
         openEmbedCode,
         openFindOutMore,
         openIntegrationConditions,
         openCalculationMethod,
         openWidgetRequest,
+        openTeleconsult,
         closeEmbedCode,
         closeFindOutMore,
         closeIntegrationConditions,
         closeCalculationMethod,
         closeWidgetRequest,
+        closeTeleconsult,
       }}
     >
       {children}

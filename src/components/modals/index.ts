@@ -5,5 +5,6 @@ export { default as FaqModal } from "@/components/modals/FaqModal";
 export { default as FindOutMoreModal } from "@/components/modals/FindOutMoreModal";
 export { default as IntegrationConditionsModal } from "@/components/modals/IntegrationConditionsModal";
 export { default as Modal } from "@/components/modals/Modal";
+export { default as TeleconsultModal } from "@/components/modals/TeleconsultModal";
 export { default as WidgetRequestModal } from "@/components/modals/WidgetRequestModal";
 export { default as ModalsRoot } from "@/components/modals/ModalsRoot";

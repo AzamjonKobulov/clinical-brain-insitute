@@ -47,7 +47,7 @@ export default function WidgetRequestModal({
         <form onSubmit={handleSubmit} className="space-y-8.75 md:space-y-5">
           {/* Данные организации */}
           <div className="space-y-3.75 md:space-y-5">
-            <h3 className="text-base font-semibold text-brand-dark">
+            <h3 className="leading-5.5 md:text-lg/6.25 font-semibold text-brand-dark">
               Данные организации
             </h3>
             <div className="grid sm:grid-cols-12 gap-3.75 sm:gap-5">
@@ -79,7 +79,7 @@ export default function WidgetRequestModal({
 
           {/* Контактные данные */}
           <div className="space-y-3.75 md:space-y-5">
-            <h3 className="text-base font-semibold text-brand-dark">
+            <h3 className="leading-5.5 md:text-lg/6.25 font-semibold text-brand-dark">
               Контактные данные
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.75 sm:gap-5">
@@ -95,7 +95,7 @@ export default function WidgetRequestModal({
 
           {/* Где планируется размещать виджет */}
           <div className="space-y-3.75 md:space-y-5">
-            <h3 className="text-base font-semibold text-brand-dark">
+            <h3 className="leading-5.5 md:text-lg/6.25 font-semibold text-brand-dark">
               Где планируется размещать виджет
             </h3>
             <div className="space-y-3.75 sm:space-y-5">

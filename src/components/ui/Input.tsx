@@ -11,8 +11,8 @@ export interface InputProps extends Omit<
 }
 
 const baseStyles = [
-  "w-full bg-white border outline-none smooth",
-  "py-2 px-4 md:py-2 md:px-5",
+  "w-full h-[39px] bg-white border outline-none smooth box-border",
+  "py-2 px-4 md:px-5",
   "leading-5.5 font-medium",
   "rounded-2xl md:rounded-brand-xl",
   "placeholder:text-brand-gray-500 text-brand-dark",

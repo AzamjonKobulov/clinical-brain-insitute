@@ -27,6 +27,7 @@ type ModalProps = {
   onClose: () => void;
   children: React.ReactNode;
   isOpen?: boolean;
+  compactPadding?: boolean;
 };
 
 export default function Modal({
@@ -34,6 +35,7 @@ export default function Modal({
   onClose,
   children,
   isOpen = true,
+  compactPadding = false,
 }: ModalProps) {
   useEffect(() => {
     if (!isOpen) return;
@@ -59,7 +61,9 @@ export default function Modal({
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full max-w-180 bg-white rounded-brand-xl p-3.75 md:p-6.25 shadow-lg max-h-[90vh] overflow-y-auto scrollbar-hide"
+            className={`relative w-full max-w-180 bg-white rounded-brand-xl shadow-lg max-h-[90vh] overflow-y-auto scrollbar-hide ${
+              compactPadding ? "py-3.75 px-0 md:p-6.25" : "p-3.75 md:p-6.25"
+            }`}
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -77,7 +81,12 @@ export default function Modal({
             >
               <CloseIcon />
             </button>
-            <h2 id="modal-title" className="pr-10 text-lg md:text-xl font-medium">
+            <h2
+              id="modal-title"
+              className={`
+                pr-10 text-lg md:text-xl font-medium ${compactPadding && "px-3.75 md:px-0"}
+              `}
+            >
               {title}
             </h2>
             <div className="mt-3.75 md:mt-5">{children}</div>
