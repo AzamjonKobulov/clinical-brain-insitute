@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { ModalProvider } from "@/contexts/ModalContext";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -22,10 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${manrope.variable} antialiased`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <body className={`${manrope.variable}  antialiased`}>
+        <ModalProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );

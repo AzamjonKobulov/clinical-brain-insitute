@@ -12,6 +12,7 @@
   --max-width-base: 1230px;
 
   --color-brand-dark: #2a2a2a;
+  --color-brand-violet: #a02cef;
   --color-brand-dev: #ebf8f7;
   --color-brand-turquoise: #41988d;
   --color-brand-green-25: #fbfbfd;
@@ -116,8 +117,16 @@
   scrollbar-width: none;
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 .scroll-brand::-webkit-scrollbar {
-  @apply w-0.75 rounded-full;
+  @apply h-0.75 w-0.75 rounded-full;
 }
 
 .scroll-brand::-webkit-scrollbar-track {

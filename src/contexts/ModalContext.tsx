@@ -1,0 +1,96 @@
+"use client";
+
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  type ReactNode,
+} from "react";
+
+type ModalContextValue = {
+  embedOpen: boolean;
+  findOutMoreOpen: boolean;
+  integrationConditionsOpen: boolean;
+  calculationMethodOpen: boolean;
+  widgetRequestOpen: boolean;
+  openEmbedCode: () => void;
+  openFindOutMore: () => void;
+  openIntegrationConditions: () => void;
+  openCalculationMethod: () => void;
+  openWidgetRequest: () => void;
+  closeEmbedCode: () => void;
+  closeFindOutMore: () => void;
+  closeIntegrationConditions: () => void;
+  closeCalculationMethod: () => void;
+  closeWidgetRequest: () => void;
+};
+
+const ModalContext = createContext<ModalContextValue | null>(null);
+
+export function ModalProvider({ children }: { children: ReactNode }) {
+  const [embedOpen, setEmbedOpen] = useState(false);
+  const [findOutMoreOpen, setHowItWorksOpen] = useState(true);
+  const [integrationConditionsOpen, setIntegrationConditionsOpen] =
+    useState(false);
+  const [calculationMethodOpen, setCalculationMethodOpen] = useState(false);
+  const [widgetRequestOpen, setWidgetRequestOpen] = useState(false);
+
+  const openEmbedCode = useCallback(() => setEmbedOpen(true), []);
+  const openFindOutMore = useCallback(() => setHowItWorksOpen(true), []);
+  const openIntegrationConditions = useCallback(
+    () => setIntegrationConditionsOpen(true),
+    []
+  );
+  const openCalculationMethod = useCallback(
+    () => setCalculationMethodOpen(true),
+    []
+  );
+  const openWidgetRequest = useCallback(() => setWidgetRequestOpen(true), []);
+  const closeEmbedCode = useCallback(() => setEmbedOpen(false), []);
+  const closeFindOutMore = useCallback(() => setHowItWorksOpen(false), []);
+  const closeIntegrationConditions = useCallback(
+    () => setIntegrationConditionsOpen(false),
+    []
+  );
+  const closeCalculationMethod = useCallback(
+    () => setCalculationMethodOpen(false),
+    []
+  );
+  const closeWidgetRequest = useCallback(
+    () => setWidgetRequestOpen(false),
+    []
+  );
+
+  return (
+    <ModalContext.Provider
+      value={{
+        embedOpen,
+        findOutMoreOpen,
+        integrationConditionsOpen,
+        calculationMethodOpen,
+        widgetRequestOpen,
+        openEmbedCode,
+        openFindOutMore,
+        openIntegrationConditions,
+        openCalculationMethod,
+        openWidgetRequest,
+        closeEmbedCode,
+        closeFindOutMore,
+        closeIntegrationConditions,
+        closeCalculationMethod,
+        closeWidgetRequest,
+      }}
+    >
+      {children}
+    </ModalContext.Provider>
+  );
+}
+
+export function useModal() {
+  const ctx = useContext(ModalContext);
+  if (!ctx) {
+    throw new Error("useModal must be used within ModalProvider");
+  }
+  return ctx;
+}

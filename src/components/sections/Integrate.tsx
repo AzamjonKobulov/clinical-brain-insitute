@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 
 import Container from "../shared/Container";
 import Button from "../ui/Button";
+import { useModal } from "@/contexts/ModalContext";
 
 const items: {
   title: string;
@@ -47,6 +50,13 @@ const items: {
 ];
 
 export default function Integrate() {
+  const {
+    openEmbedCode,
+    openFindOutMore,
+    openIntegrationConditions,
+    openWidgetRequest,
+  } = useModal();
+
   return (
     <section id="integrate">
       <Container className="space-y-10 lg:space-y-8.75">
@@ -63,7 +73,7 @@ export default function Integrate() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-5">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <div
               key={item.title}
               className="space-y-3 px-6.25 pb-10 pt-8 border border-brand-vibrant-secondary rounded-brand-xl"
@@ -84,6 +94,13 @@ export default function Integrate() {
                   <Button
                     variant="primary"
                     className="h-11 lg:h-11.5 w-full sm:w-auto lg:w-full xl:w-auto flex-base gap-2.5"
+                    onClick={
+                      index === 0
+                        ? openEmbedCode
+                        : index === 1
+                          ? openWidgetRequest
+                          : undefined
+                    }
                   >
                     {item.buttonIcon && item.buttonIcon()}
                     {item.buttonText1}
@@ -91,6 +108,13 @@ export default function Integrate() {
                   <Button
                     variant="outline"
                     className="h-11 lg:h-11.5 w-full sm:w-auto lg:w-full xl:w-auto"
+                    onClick={
+                      index === 0
+                        ? openFindOutMore
+                        : index === 1
+                          ? openIntegrationConditions
+                          : undefined
+                    }
                   >
                     {item.buttonText2}
                   </Button>

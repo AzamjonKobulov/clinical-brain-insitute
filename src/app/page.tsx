@@ -6,10 +6,12 @@ import Integrate from "@/components/sections/Integrate";
 import Formats from "@/components/sections/Formats";
 import WhatItGives from "@/components/sections/WhatItGives";
 import FAQ from "@/components/sections/FAQ";
+import ModalsRoot from "@/components/modals/ModalsRoot";
 
 export default function Home() {
   return (
     <>
+      <ModalsRoot />
       <Hero />
       <HowItWorks />
       <Calculator />

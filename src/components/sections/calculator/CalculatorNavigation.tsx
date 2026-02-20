@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Button from "@/components/ui/Button";
+import { useModal } from "@/contexts/ModalContext";
 import { TOTAL_STEPS } from "@/data/calculator";
 
 type Props = {
@@ -21,6 +22,8 @@ export default function CalculatorNavigation({
   onBack,
   onNext,
 }: Props) {
+  const { openCalculationMethod } = useModal();
+
   return (
     <>
       {isLastStep && (
@@ -36,8 +39,12 @@ export default function CalculatorNavigation({
             <Button variant="primary" className="w-full md:w-auto">
               Записаться на телеконсультацию
             </Button>
-            <Button variant="outline" className="w-full md:w-auto">
-              Методика рассчёта
+            <Button
+              variant="outline"
+              className="w-full md:w-auto"
+              onClick={openCalculationMethod}
+            >
+              Методика расчёта
             </Button>
           </div>
           <Link
