@@ -33,12 +33,12 @@ const ModalContext = createContext<ModalContextValue | null>(null);
 
 export function ModalProvider({ children }: { children: ReactNode }) {
   const [embedOpen, setEmbedOpen] = useState(false);
-  const [findOutMoreOpen, setHowItWorksOpen] = useState(true);
+  const [findOutMoreOpen, setHowItWorksOpen] = useState(false);
   const [integrationConditionsOpen, setIntegrationConditionsOpen] =
     useState(false);
   const [calculationMethodOpen, setCalculationMethodOpen] = useState(false);
   const [widgetRequestOpen, setWidgetRequestOpen] = useState(false);
-  const [teleconsultOpen, setTeleconsultOpen] = useState(true);
+  const [teleconsultOpen, setTeleconsultOpen] = useState(false);
 
   const openEmbedCode = useCallback(() => setEmbedOpen(true), []);
   const openFindOutMore = useCallback(() => setHowItWorksOpen(true), []);
