@@ -67,7 +67,7 @@ export default function FaqModal({
                 aria-controls={`faq-content-${index}`}
                 id={`faq-trigger-${index}`}
               >
-                <h4 className="w-full flex-between items-center leading-5.5 lg:text-lg/6.25 font-semibold">
+                <h4 className="w-full flex-between items-center leading-5.5 font-semibold">
                   <span className="pr-2">{faq.question}</span>
                   <motion.span
                     animate={{ rotate: isOpenItem ? 180 : 0 }}
@@ -104,7 +104,7 @@ export default function FaqModal({
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="space-y-2.5 text-sm/5 lg:text-base/6.25 px-5 pb-5">
+                    <div className="space-y-2.5 text-sm/5  px-5 pb-5">
                       {faq.answers.map((paragraph, i) => {
                         const isFirst = i === 0;
                         const boldMatch = paragraph.match(/^(.+?\.)\s/);
